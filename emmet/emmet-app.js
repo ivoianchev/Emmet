@@ -18165,6 +18165,10 @@ define('utils/action',['require','exports','module','lodash','./common','./cssSe
 			if (!resources.hasSyntax(syntax)) {
 				syntax = 'html';
 			}
+
+            if (actionUtils.isXHTML(editor)) {
+                syntax = 'xhtml';
+            }   
 			
 			if (syntax == 'html' && (this.isStyle(editor) || this.isInlineCSS(editor))) {
 				syntax = 'css';
