@@ -1,11 +1,9 @@
 {
 	"html": {
-		"filters": "html, c",
+		"filters": "html, c, 2c-image-path",
 		
 		"abbreviations": {
 			"a": "<a href=\"#\"></a>",
-
-			"img": "<img src=\"css/images/${cursor}\" alt=\"\" />",
 
 			"form": "<form action=\"?\" method=\"post\">",
 
@@ -130,7 +128,7 @@
 	"xhtml" : {
 		"extends": "html",
 
-		"filters": "html, c",
+		"filters": "html, c, 2c-image-path",
 
 		"abbreviations": {
 			"nav" 	: ".nav>ul>li*>a",
