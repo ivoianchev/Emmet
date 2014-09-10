@@ -105,7 +105,24 @@
 			
 			"__option": "\n<option value=\"\">Select $#</option>",
 
-			"__textarea": "<textara class=\"textarea\" name=\"field-$#\" id=\"field-$#\">$#</textarea>"
+			"__textarea": "<textara class=\"textarea\" name=\"field-$#\" id=\"field-$#\">$#</textarea>",
+
+
+			"cl": "<div class=\"cl\">&nbsp;</div>",
+				
+			"link": "<link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\" media=\"all\" />",
+			
+			"script": "<script type=\"text/javascript\">\n\t$0\n</script>",
+			
+			"style": "<style type=\"text/css\" media=\"screen\">\n\t$0\n</style>",
+			
+			"scriptsrc": "<script src=\"js/$1\" type=\"text/javascript\"></script>",
+			
+			"ssi": "<!-- #include virtual=\"ssi-${1:header}.shtml\" -->",
+			
+			"xhtml": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n\t<meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" />\n\n\t<title>{ Project Name }</title>\n\n\t<link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\" media=\"all\" />\n\n\t<link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"css/images/favicon.ico\" />\n</head>\n<body>\n\t$0\n</body>\n</html>",
+			
+			"html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"utf-8\" />\n\n\t<title>{ Project Name }</title>\n\n\t<link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"css/images/favicon.ico\" />\n\n\t<link rel=\"stylesheet\" href=\"css/style.css\" />\n</head>\n<body>\n\t$0\n</body>\n</html>"
 		}
 	},
 
