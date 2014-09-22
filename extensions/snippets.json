@@ -67,9 +67,9 @@
 			"section": "_section",
 			"sections": "section*>shell",
 			
-			"search" : ".search>form[action=\"?\" method=\"get\"]>label[for=\"q\"].hidden{Search}+input[type=\"text\" name=\"q\" id=\"q\" value=\"Search\"].search-field+input:s.search-btn[value=\"GO\"]",
+			"search" : ".search>form[action=\"?\" method=\"get\"]>label[for=\"q\"].hidden{Search}+input[type=\"text\" name=\"q\" id=\"q\" value=\"\" placeholder=\"Search\"].search-field+input:s.search-btn[value=\"GO\"]",
 
-			"subscribe" : ".subscribe>form[action=\"?\" method=\"post\"]>label[for=\"mail\"].hidden{Email}+input[type=\"text\" id=\"mail\" name=\"mail\" value=\"Email\"].subscribe-field+input:s.subscribe-btn[value=\"GO\"]",
+			"subscribe" : ".subscribe>form[action=\"?\" method=\"post\"]>label[for=\"mail\"].hidden{Email}+input[type=\"text\" id=\"mail\" name=\"mail\" value=\"\" placeholder=\"Email\"].subscribe-field+input:s.subscribe-btn[value=\"GO\"]",
 
 			"frm" : ".form>form>.form-head+.form-body+.form-actions>input:s.form-btn[value=Submit]",
 
@@ -103,7 +103,7 @@
 			
 			"__option": "\n<option value=\"\">Select $#</option>",
 
-			"__textarea": "<textara class=\"textarea\" name=\"field-$#\" id=\"field-$#\">$#</textarea>",
+			"__textarea": "<textarea class=\"textarea\" name=\"field-$#\" id=\"field-$#\">$#</textarea>",
 
 
 			"cl": "<div class=\"cl\">&nbsp;</div>",
