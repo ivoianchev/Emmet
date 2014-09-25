@@ -7,7 +7,9 @@
 
 			"form": "<form action=\"?\" method=\"post\">",
 
-			"table": "<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">",
+			"table": "div.table>tbl>tr(>th*)+tr>td*",
+
+			"tbl": "<table>",
 			
 			"shell": ".shell",
 
@@ -67,27 +69,60 @@
 			"section": "_section",
 			"sections": "section*>shell",
 			
-			"search" : ".search>form[action=\"?\" method=\"get\"]>label[for=\"q\"].hidden{Search}+input[type=\"text\" name=\"q\" id=\"q\" value=\"\" placeholder=\"Search\"].search-field+input:s.search-btn[value=\"GO\"]",
+			"search" : ".search>form[action=\"?\" method=\"get\"]>label[for=\"q\"].hidden{Search}+input[type=\"search\" name=\"q\" id=\"q\" value=\"\" placeholder=\"Search\"].search-field+input:s.search-btn[value=\"GO\"]",
 
-			"subscribe" : ".subscribe>form[action=\"?\" method=\"post\"]>label[for=\"mail\"].hidden{Email}+input[type=\"text\" id=\"mail\" name=\"mail\" value=\"\" placeholder=\"Email\"].subscribe-field+input:s.subscribe-btn[value=\"GO\"]",
+			"subscribe" : ".subscribe>form[action=\"?\" method=\"post\"]>label[for=\"mail\"].hidden{Email}+input[type=\"email\" id=\"mail\" name=\"mail\" value=\"\" placeholder=\"Email\"].subscribe-field+input:s.subscribe-btn[value=\"GO\"]",
 
 			"frm" : ".form>form>.form-head+.form-body+.form-actions>input:s.form-btn[value=Submit]",
 
-			"field": ".form-row*>_label+.form-controls>_input_field",
-			"fields": ".form-row*>_label+.form-controls>_input_select",
-			"fieldt": ".form-row*>_label+.form-controls>_input_textarea",
+			"field": ".form-row*>_label+.form-controls>_input_text",
+			"fields": ".form-row*>_label+.form-controls>_select",
+			"fieldt": ".form-row*>_label+.form-controls>_textarea",
+
+			"fielde": ".form-row*>_label+.form-controls>_input_email",
+			"fieldsearch": ".form-row*>_label+.form-controls>_input_search",
+			"fieldtel": ".form-row*>_label+.form-controls>_input_tel",
+			"fieldurl": ".form-row*>_label+.form-controls>_input_url",
+			"fieldcolor": ".form-row*>_label+.form-controls>_input_color",
+			"fieldnum": ".form-row*>_label+.form-controls>_input_number",
+			"fieldrange": ".form-row*>_label+.form-controls>_input_range",
+			"fielddate": ".form-row*>_label+.form-controls>_input_date",
+			"fieldtime": ".form-row*>_label+.form-controls>_input_time",
+			"fieldmonth": ".form-row*>_label+.form-controls>_input_month",
+			"fieldweek": ".form-row*>_label+.form-controls>_input_week",
+			"fielddatetime": ".form-row*>_label+.form-controls>_input_datetime",
+			"fielddatetimelocal": ".form-row*>_label+.form-controls>_input_datetime",
 
 			"checks": "ul.list-checkboxes>li*>.checkbox>_label+_checkbox",
 			"radios": "ul.list-radios>li*>.radio>_label+_radio",
 
 			"_label": "label.form-label[for=\"field-$#\"]{$#}+{}",
-			"_input_field": "input.field[type=\"text\" name=\"field-$#\" id=\"field-$#\" value=\"\" placeholder=\"$#\"]",
-			"_input_select": "select.select[name=\"field-$#\" id=\"field-$#\"]>__option+{}",
-			"_input_textarea": "__textarea+{}",
+			
+			"_input_text": "input.field[type=\"text\" name=\"field-$#\" id=\"field-$#\" value=\"\" placeholder=\"$#\"]",
+			"_select": "select.select[name=\"field-$#\" id=\"field-$#\"]>__option+{}",
+			"_textarea": "__textarea+{}",
+
+			"_input_email": "input.field[type=\"email\" name=\"field-$#\" id=\"field-$#\" value=\"\" placeholder=\"$#\"]",
+			"_input_search": "input.field[type=\"search\" name=\"field-$#\" id=\"field-$#\" value=\"\" placeholder=\"$#\"]",
+			"_input_tel": "input.field[type=\"tel\" name=\"field-$#\" id=\"field-$#\" value=\"\" placeholder=\"$#\"]",
+			"_input_url": "input.field[type=\"url\" name=\"field-$#\" id=\"field-$#\" value=\"\" placeholder=\"$#\"]",
+			"_input_color": "input.field[type=\"color\" name=\"field-$#\" id=\"field-$#\" value=\"\" placeholder=\"$#\"]",
+			"_input_number": "input.field[type=\"range\" name=\"field-$#\" id=\"field-$#\" value=\"20\" min=\"0\" max=\"100\" step=\"10\"]",
+			"_input_range": "input.field[type=\"range\" name=\"field-$#\" id=\"field-$#\" value=\"20\" min=\"0\" max=\"100\"]",
+			"_input_date": "input.field[type=\"date\" name=\"field-$#\" id=\"field-$#\" value=\"\" placeholder=\"$#\"]",
+			"_input_time": "input.field[type=\"time\" name=\"field-$#\" id=\"field-$#\" value=\"\" placeholder=\"$#\"]",
+			"_input_month": "input.field[type=\"month\" name=\"field-$#\" id=\"field-$#\" value=\"\" placeholder=\"$#\"]",
+			"_input_week": "input.field[type=\"week\" name=\"field-$#\" id=\"field-$#\" value=\"\" placeholder=\"$#\"]",
+			"_input_datetime": "input.field[type=\"datetime\" name=\"field-$#\" id=\"field-$#\" value=\"\" placeholder=\"$#\"]",
+			"_input_datetime_local": "input.field[type=\"datetime-local\" name=\"field-$#\" id=\"field-$#\" value=\"\" placeholder=\"$#\"]",
+
+
 			"_checkbox": "input[type=\"checkbox\" name=\"field-$#\" id=\"field-$#\"]",
 			"_radio": "input[type=\"radio\" name=\"\" id=\"field-$#\"]",
 
 			"acc": ".accordion>.accordion-section*>.accordion-head(h3{$#})+.accordion-body",
+
+			"tabs": ".tabs>.tabs-head>nav.tabs-nav+.tabs-body>.tab",
 
 			"slider":".slider>.slider-clip(ul.slides>li.slide*>.slide-image>img[src=\"slide$.jpg\"])+.slider-actions(a.slider-prev{Previous Slide}+a.slider-next{Next Slide})+.slider-paging",
 
@@ -103,7 +138,7 @@
 			
 			"__option": "\n<option value=\"\">Select $#</option>",
 
-			"__textarea": "<textarea class=\"textarea\" name=\"field-$#\" id=\"field-$#\">$#</textarea>",
+			"__textarea": "<textarea class=\"textarea\" name=\"field-$#\" id=\"field-$#\" placeholder=\"$#\"></textarea>",
 
 
 			"cl": "<div class=\"cl\">&nbsp;</div>",
@@ -142,7 +177,9 @@
 
 			"footer": ".footer",
 
-			"article": ".article"
+			"article": ".article",
+
+			"tbl": "<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">"
 		}
 	},
 
