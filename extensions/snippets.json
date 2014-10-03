@@ -93,8 +93,8 @@
 			"fielddatetime": ".form-row*>_label+.form-controls>_input_datetime",
 			"fielddatetimelocal": ".form-row*>_label+.form-controls>_input_datetime",
 
-			"checks": "ul.list-checkboxes>li*>.checkbox>_checkbox+_label",
-			"radios": "ul.list-radios>li*>.radio>_radio+_label",
+			"checks": "ul.list-checkboxes>li*>.checkbox>_checkbox+__label+{}",
+			"radios": "ul.list-radios>li*>.radio>_radio+__label+{}",
 
 			"_label": "label.form-label[for=\"field-$#\"]{$#}+{}",
 			
@@ -140,6 +140,7 @@
 
 			"__textarea": "<textarea class=\"textarea\" name=\"field-$#\" id=\"field-$#\" placeholder=\"$#\"></textarea>",
 
+			"__label": "<label class=\"form-label\" for=\"field-$#\">$#</label>",
 
 			"cl": "<div class=\"cl\">&nbsp;</div>",
 				
