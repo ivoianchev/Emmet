@@ -195,6 +195,8 @@
 			"mediam": "@media only screen and (max-width: 767px){\n\t|\n}",
 			"mediaw": "@media screen and (-webkit-min-device-pixel-ratio: 0 ){\n\t|\n}",
 			"mediar": "@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {\n\t\n}",
+			
+			"notext": "font-size: 0; line-height: 0; text-indent: -4000px;",
 
 			"@i": "@import url(|);",
 			"@import": "@import url(|);",
