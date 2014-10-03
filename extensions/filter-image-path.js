@@ -37,7 +37,7 @@ define(function(require, exports, module) {
 		}
 
 		// hardcoded default image path
-		var defaultPath = 'css/images/';
+		var defaultPath = 'css/images/temp/';
 
 		// no paths found, add ours
 		// check if the default path is there
