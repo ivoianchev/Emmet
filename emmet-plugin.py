@@ -244,8 +244,8 @@ def update_settings():
 			payload[k] = data
 
 	ctx.reset()
-	ctx.load_user_data(json.dumps(payload))
 	ctx.js()
+	ctx.load_user_data(json.dumps(payload))
 
 def get_scope(view, pt=-1):
 	if pt == -1:
