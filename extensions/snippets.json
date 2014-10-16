@@ -122,7 +122,7 @@
 
 			"acc": ".accordion>.accordion-section*>.accordion-head(h3{$#})+.accordion-body",
 
-			"tabs": ".tabs>.tabs-head>nav.tabs-nav+.tabs-body>.tab",
+			"tabs": ".tabs>.tabs-head(nav.tabs-nav)+.tabs-body>.tab",
 
 			"slider":".slider>.slider-clip(ul.slides>li.slide*>.slide-image>img[src=\"slide$.jpg\"])+.slider-actions(a.slider-prev{Previous Slide}+a.slider-next{Next Slide})+.slider-paging",
 
@@ -197,6 +197,14 @@
 			"mediar": "@media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-devicepixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx) {\n\t\n}",
 			
 			"notext": "font-size: 0; line-height: 0; text-indent: -4000px;",
+
+			"bg": "background:url(images/|) no-repeat 0 0;|",
+			"bgi": "background-image:url(images/|);",
+			"bgrgba": "background:rgba(${1:},${1:},${1:},${2:1});|",
+			"ff": "font-family:'${1:Open Sans}', sans-serif;|",
+			"ffa": "font-family:${1:Arial}, ${2:sans-}serif;",
+			"fl": "float:left;",
+			"bgr": "background-repeat:no-repeat;",
 
 			"@i": "@import url(|);",
 			"@import": "@import url(|);",
