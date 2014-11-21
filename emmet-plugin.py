@@ -43,6 +43,9 @@ settings = None
 # Default ST settings
 user_settings = None
 
+# spartan snippets path
+spartan_snippets_path = sublime.packages_path() + '\\User\\.spartan'
+
 def is_st3():
 	return sublime.version()[0] == '3'
 
@@ -97,6 +100,9 @@ def init():
 		logger=delegate.log,
 		reader=js_file_reader
 	)
+
+
+	
 
 	update_settings()
 
@@ -235,6 +241,9 @@ def get_line_padding(line):
 
 def update_settings():
 	ctx.set_ext_path(get_extensions_path())
+
+	# load spartan extensions
+	ctx.set_spartan_ext_path( spartan_snippets_path )
 
 	keys = ['snippets', 'preferences', 'syntaxProfiles', 'profiles']
 	payload = {}
@@ -789,6 +798,7 @@ class EmmetInsertAttribute(sublime_plugin.TextCommand):
 class EmmetResetContext(sublime_plugin.TextCommand):
 	def run(self, edit, **kw):
 		update_settings()
+
 
 def plugin_loaded():
 	sublime.set_timeout(init, 200)

@@ -26,6 +26,8 @@ define(function(require, exports, module) {
 		'A comma-separated list of tag names that should <em>always</em> get inner indentation.');
 
 	var placeholder = '%s';
+
+
 	
 	/**
 	 * Get indentation for given node
@@ -147,7 +149,22 @@ define(function(require, exports, module) {
 
 	    return (currentIndex + 1) == totalChildren; 
 	}
+
 	
+	var spartanTextSnippets = false;
+
+	function findSpartanTextSnippet( abbr ) {
+		if( !spartanTextSnippets ) {
+			spartanTextSnippets = resources.getSection('spartantextsnippets');
+		}
+
+		if( typeof(spartanTextSnippets[abbr]) == 'undefined' ) {
+			return abbr;
+		}
+
+		return spartanTextSnippets[abbr];
+	}
+
 	/**
 	 * Processes element with <code>tag</code> type
 	 * @param {AbbreviationNode} item
@@ -222,9 +239,18 @@ define(function(require, exports, module) {
 		level = level || 0;
 	
 		_.each(tree.children, function(item) {
+
 			if (abbrUtils.isSnippet(item)) {
 				processSnippet(item, profile, level);
 			} else {
+				// try to find spartan text snippet
+				if( item['_text'] != "" ) {
+					var spartanTextSnippet = findSpartanTextSnippet(item['_text']);
+					
+					item['_text'] = spartanTextSnippet;
+					item['content'] = spartanTextSnippet;
+				}
+
 				processTag(item, profile, level);
 			}
 			

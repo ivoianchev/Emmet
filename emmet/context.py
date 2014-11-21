@@ -150,6 +150,9 @@ class Context():
 		self.set_ext_path(ext_path)
 		self._user_data = None
 
+		# spartan ext parg
+		self._spartan_ext_path = None
+
 		set_global_context(self)
 
 	def log(self, message):
@@ -170,18 +173,43 @@ class Context():
 		self._ext_path = val
 		self.reset()
 
-	def load_extensions(self, path=None):
+	# Spartan set ext path
+	def get_spartan_ext_path(self):
+		return self._spartan_ext_path
+	
+	# Spartan get ext path
+	def set_spartan_ext_path(self, val):
+		if val:
+			val = os.path.expanduser(val)
+			val = os.path.abspath(val)
+
+		if val == self._spartan_ext_path:
+			return
+
+		self._spartan_ext_path = val
+
+	def load_extensions(self, path=None, spartan_path=None):
 		if path is None:
 			path = self.get_ext_path();
 
-		if path and os.path.isdir(path):
-			ext_files = []
-			self.log('Loading Emmet extensions from %s' % path)
-			for dirname, dirnames, filenames in os.walk(path):
-				for filename in filenames:
-					if filename[0] != '.':
-						ext_files.append(os.path.join(dirname, filename))
+		if spartan_path is None:
+			spartan_path = self.get_spartan_ext_path()
 
+		paths = [path, spartan_path]
+
+		ext_files = []
+		
+		for ext_path in paths:
+			if ext_path and os.path.isdir(ext_path):
+				self.log('Loading Emmet extensions from %s' % ext_path)
+				for dirname, dirnames, filenames in os.walk(ext_path):
+					for filename in filenames:
+						if filename[0] != '.':
+							ext_files.append(os.path.join(dirname, filename))
+
+
+		
+		if len(ext_files) > 0 :
 			self.js().locals.pyLoadExtensions(ext_files)
 
 	def js(self):
